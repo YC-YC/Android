@@ -10,6 +10,16 @@ import android.view.View;
 
 import com.yc.pluginlib.PluginCallback;
 
+/**
+ * 
+ * @author YC2
+ * @time 2017-10-24 下午4:19:42
+ * TODO:
+ * 注意：
+ * 1、client引入jar不能打勾，不然会出现重复加载问题
+ * 2、client可放在mnt/sdcard目录下
+ * 
+ */
 public class MainActivity extends Activity {
 
 	protected static final String TAG = "TestPlugin";
