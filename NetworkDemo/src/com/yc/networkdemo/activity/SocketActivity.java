@@ -45,6 +45,7 @@ public class SocketActivity extends Activity {
 				@Override
 				public void run() {
 					try {
+						//当主机只有一个ip时，默认绑定该IP，也可通过构造函数指定IP
 						ServerSocket serverSocket = new ServerSocket(3000);
 						while(true){
 							Socket socket = serverSocket.accept();
