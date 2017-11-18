@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <Button
+        android:id="@+id/bt_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="退出" />
+
+    <Button
+        android:id="@+id/bt_create_socket_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bt_exit"
+        android:layout_below="@+id/bt_exit"
+        android:onClick="doClick"
+        android:text="创建SocketServer" />
+
+    <Button
+        android:id="@+id/bt_create_socket_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bt_create_socket_server"
+        android:layout_below="@+id/bt_create_socket_server"
+        android:onClick="doClick"
+        android:text="创建Socket客户端" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bt_create_socket_client"
+        android:layout_below="@+id/bt_create_socket_client"
+        android:text="TextView" />
+
+</RelativeLayout>

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myservice"
     android:versionCode="1"
+    android:sharedUserId="android.uid.system"  
     android:versionName="2017.04.20.01">
 
     <uses-sdk
