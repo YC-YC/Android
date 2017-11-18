@@ -11,25 +11,30 @@
         android:id="@+id/bt_exit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="doClick"
         android:text="退出" />
 
     <Button
-        android:id="@+id/bt_volley"
+        android:id="@+id/bt_xutils_http_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bt_asynchttpclient"
+        android:layout_below="@+id/bt_xutils_http_get"
         android:layout_centerHorizontal="true"
-        android:onClick="doClick"
         android:text="post" />
 
     <Button
-        android:id="@+id/bt_asynchttpclient"
+        android:id="@+id/bt_xutils_http_get"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/bt_exit"
         android:layout_below="@+id/bt_exit"
-        android:onClick="doClick"
         android:text="get" />
+
+    <Button
+        android:id="@+id/bt_xutils_http_req"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bt_xutils_http_post"
+        android:layout_below="@+id/bt_xutils_http_post"
+        android:text="请求方式" />
 
 </RelativeLayout>
