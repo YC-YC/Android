@@ -11,25 +11,22 @@
         android:id="@+id/bt_exit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="doClick"
         android:text="退出" />
 
     <Button
         android:id="@+id/bt_async_get"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bt_asynchttpclient"
-        android:layout_centerHorizontal="true"
-        android:onClick="doClick"
+        android:layout_alignLeft="@+id/bt_exit"
+        android:layout_below="@+id/bt_exit"
         android:text="get" />
 
     <Button
         android:id="@+id/bt_async_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/bt_exit"
-        android:layout_below="@+id/bt_exit"
-        android:onClick="doClick"
+        android:layout_alignLeft="@+id/bt_async_get"
+        android:layout_below="@+id/bt_async_get"
         android:text="post" />
 
 </RelativeLayout>

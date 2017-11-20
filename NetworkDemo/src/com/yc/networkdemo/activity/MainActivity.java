@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 	public void doClick(View view) {
 		switch (view.getId()) {
 		case R.id.bt_asynchttpclient:
-//			startActivity(new Intent(this, AsyncHttpClientActivity.class));
+			startActivity(new Intent(this, AsyncHttpClientActivity.class));
 			break;
 		case R.id.bt_volley:
 			startActivity(new Intent(this, VollyActivity.class));
