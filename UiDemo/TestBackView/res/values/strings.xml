@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">雷达</string>
+    <string name="app_name2">倒车轨迹</string>
+    <string name="app_name3">圆形进度</string>
+    <string name="app_name4">包络线</string>
+    <string name="app_name5">光影线</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

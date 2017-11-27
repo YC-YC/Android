@@ -1,0 +1,200 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app_custom="http://schemas.android.com/apk/res/com.example.testbackview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <ImageView 
+           android:layout_width="166px"
+        android:layout_height="377px"
+        android:background="@drawable/car"
+        android:layout_gravity="center_horizontal"/>
+
+        <com.example.testbackview.EnvelopeView
+            android:id="@+id/envelope_left_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            app_custom:from_color="#FFFFFF00"
+            app_custom:to_color="#88FFFF00" 
+            app_custom:number="3"
+            app_custom:persent="0.3"
+            app_custom:radio="300"
+            app_custom:rotate_angle="20"
+            app_custom:text_clockwise="false"
+            app_custom:sweepAngle="40"
+            />
+
+       <com.example.testbackview.EnvelopeView
+            android:id="@+id/envelope_left_corner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            app_custom:from_color="#FFFFFF00"
+            app_custom:to_color="#88FFFF00" 
+            app_custom:number="3"
+            app_custom:persent="0.3"
+            app_custom:radio="300"
+            app_custom:rotate_angle="60"
+            app_custom:text_clockwise="false"
+            app_custom:sweepAngle="40"
+             />
+
+        <com.example.testbackview.EnvelopeView
+            android:id="@+id/envelope_right_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            app_custom:from_color="#FFFFFF00"
+            app_custom:to_color="#88FFFF00" 
+            app_custom:number="3"
+            app_custom:persent="0.3"
+            app_custom:radio="300"
+            app_custom:rotate_angle="-20"
+            app_custom:text_clockwise="false"
+            app_custom:sweepAngle="40"
+             />
+
+       <com.example.testbackview.EnvelopeView
+            android:id="@+id/envelope_right_corner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+           app_custom:from_color="#FFFFFF00"
+            app_custom:to_color="#88FFFF00" 
+            app_custom:number="3"
+            app_custom:persent="0.3"
+            app_custom:radio="300"
+            app_custom:rotate_angle="-60"
+            app_custom:text_clockwise="false"
+            app_custom:sweepAngle="40"
+           />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="100"
+                android:progress="0" />
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="100"
+                android:progress="0" />
+
+            <SeekBar
+                android:id="@+id/seekBar3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="100"
+                android:progress="0" />
+
+            <SeekBar
+                android:id="@+id/seekBar4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="100"
+                android:progress="0"/>
+
+            <SeekBar
+                android:id="@+id/seekBar5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="20"
+                android:progress="0"/>
+
+            <SeekBar
+                android:id="@+id/seekBar6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="20"
+                android:progress="0"/>
+
+            <SeekBar
+                android:id="@+id/seekBar7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="20"
+                android:progress="0"/>
+
+            <SeekBar
+                android:id="@+id/seekBar8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="20"
+                android:progress="0"/>
+
+            <SeekBar
+                android:id="@+id/seekBar9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="20"
+                android:progress="0"/>
+
+            <SeekBar
+                android:id="@+id/seekBar10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="20"
+                android:progress="0"/>
+
+            <SeekBar
+                android:id="@+id/seekBar11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="20"
+                android:progress="0" />
+
+            <SeekBar
+                android:id="@+id/seekBar12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:max="20"
+                android:progress="0"/>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
+                android:text="复位" />
+             <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="doClick"
+                android:text="退出" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

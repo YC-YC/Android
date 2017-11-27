@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app_custom="http://schemas.android.com/apk/res/com.example.testbackview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <com.example.testbackview.CircleSeekBar
+        android:id="@+id/circle_seekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="200"
+        android:orientation="vertical" >
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:max="100"
+            android:progress="50" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:max="100"
+            android:progress="50" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="doClick"
+            android:text="复位" />
+
+        <Button
+            android:id="@+id/btn_level_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="doClick"
+            android:text="调整Level" />
+
+        <Button
+            android:id="@+id/btn_level_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="doClick"
+            android:text="调整Level" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.example.testbackview.LevelView
+            android:id="@+id/levelview_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#55FF0000"
+            app_custom:rotate_type="rotate_none" />
+
+        <com.example.testbackview.LevelView
+            android:id="@+id/levelview_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#5500FF00"
+            app_custom:rotate_type="rotate_x" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.example.testbackview.LevelView
+            android:id="@+id/levelview_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#55FF0000"
+            app_custom:rotate_type="rotate_y" />
+
+        <com.example.testbackview.LevelView
+            android:id="@+id/levelview_xy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#5500FF00"
+            app_custom:rotate_type="rotate_xy" />
+    </LinearLayout>
+
+</LinearLayout>

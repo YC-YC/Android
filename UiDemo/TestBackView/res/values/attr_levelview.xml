@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 旋转方向 -->
+    <attr name="rotate_type">
+        <enum name="rotate_none" value="0" />
+        <enum name="rotate_x" value="1" />
+        <enum name="rotate_y" value="2" />
+        <enum name="rotate_xy" value="3" />
+    </attr>
+
+    <declare-styleable name="LevelView">
+        <attr name="rotate_type" />
+    </declare-styleable>
+
+</resources>
