@@ -1,10 +1,14 @@
 /**
  * 
  */
-package com.example.testbackview;
+package com.example.testbackview.widget;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.testbackview.R;
+import com.example.testbackview.R.styleable;
+import com.example.testbackview.utils.GeometricUtil;
 
 import android.content.Context;
 import android.content.res.TypedArray;

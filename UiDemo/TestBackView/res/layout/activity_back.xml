@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal" >
 
-    <com.example.testbackview.BackView
+    <com.example.testbackview.widget.BackView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

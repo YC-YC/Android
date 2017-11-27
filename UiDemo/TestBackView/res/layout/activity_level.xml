@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal" >
 
-    <com.example.testbackview.CircleSeekBar
+    <com.example.testbackview.widget.CircleSeekBar
         android:id="@+id/circle_seekbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,14 +60,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <com.example.testbackview.LevelView
+        <com.example.testbackview.widget.LevelView
             android:id="@+id/levelview_normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#55FF0000"
             app_custom:rotate_type="rotate_none" />
 
-        <com.example.testbackview.LevelView
+        <com.example.testbackview.widget.LevelView
             android:id="@+id/levelview_x"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,14 +80,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <com.example.testbackview.LevelView
+        <com.example.testbackview.widget.LevelView
             android:id="@+id/levelview_y"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#55FF0000"
             app_custom:rotate_type="rotate_y" />
 
-        <com.example.testbackview.LevelView
+        <com.example.testbackview.widget.LevelView
             android:id="@+id/levelview_xy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

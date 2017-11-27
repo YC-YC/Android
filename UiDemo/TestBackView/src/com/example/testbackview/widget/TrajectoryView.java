@@ -6,7 +6,7 @@ package com.example.testbackview.widget;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.testbackview.GeometricUtil;
+import com.example.testbackview.utils.GeometricUtil;
 
 import android.content.Context;
 import android.graphics.Bitmap;

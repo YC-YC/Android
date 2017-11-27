@@ -1,4 +1,11 @@
-package com.example.testbackview;
+package com.example.testbackview.activity;
+
+import com.example.testbackview.R;
+import com.example.testbackview.R.drawable;
+import com.example.testbackview.R.id;
+import com.example.testbackview.R.layout;
+import com.example.testbackview.widget.CircleSeekBar;
+import com.example.testbackview.widget.LevelView;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,7 +13,7 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-public class MainActivity3 extends Activity {
+public class LevelActivity extends Activity {
 
 	private CircleSeekBar mCircleSeekBar;
 	private SeekBar mSeekBar1;
@@ -32,7 +39,7 @@ public class MainActivity3 extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_activity3);
+		setContentView(R.layout.activity_level);
 		mCircleSeekBar = (CircleSeekBar) findViewById(R.id.circle_seekbar);
 		mSeekBar1 = (SeekBar) findViewById(R.id.seekBar1);
 		mSeekBar1.setOnSeekBarChangeListener(mOnSeekBarChangeListener);

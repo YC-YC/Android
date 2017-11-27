@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.example.testbackview;
+package com.example.testbackview.widget;
 
 import java.util.ArrayList;
 import java.util.List;

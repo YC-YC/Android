@@ -1,4 +1,9 @@
-package com.example.testbackview;
+package com.example.testbackview.activity;
+
+import com.example.testbackview.R;
+import com.example.testbackview.R.id;
+import com.example.testbackview.R.layout;
+import com.example.testbackview.widget.EnvelopeView;
 
 import android.app.Activity;
 import android.graphics.drawable.LevelListDrawable;
@@ -7,7 +12,7 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-public class MainActivity5 extends Activity {
+public class EnvolopActivity extends Activity {
 
 	private EnvelopeView mLeftMid, mLeftCorner, mRightMid, mRightCorner;
 	private SeekBar mSeekBar1;

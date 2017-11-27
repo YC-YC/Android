@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.example.testbackview;
+package com.example.testbackview.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <com.example.testbackview.EnvelopeView
+        <com.example.testbackview.widget.EnvelopeView
             android:id="@+id/envelope_front"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
             app_custom:sweepAngle="100"
             app_custom:to_color="#00FF0000" />
 
-        <com.example.testbackview.EnvelopeView
+        <com.example.testbackview.widget.EnvelopeView
             android:id="@+id/envelope_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             app_custom:sweepAngle="100"
             app_custom:to_color="#00FF0000" />
 
-        <com.example.testbackview.EnvelopeView
+        <com.example.testbackview.widget.EnvelopeView
             android:id="@+id/envelope_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
             app_custom:sweepAngle="50"
             app_custom:to_color="#00FF0000" />
 
-        <com.example.testbackview.EnvelopeView
+        <com.example.testbackview.widget.EnvelopeView
             android:id="@+id/envelope_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

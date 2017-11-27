@@ -1,7 +1,10 @@
 /**
  * 
  */
-package com.example.testbackview;
+package com.example.testbackview.widget;
+
+import com.example.testbackview.R;
+import com.example.testbackview.R.styleable;
 
 import android.content.Context;
 import android.content.res.TypedArray;

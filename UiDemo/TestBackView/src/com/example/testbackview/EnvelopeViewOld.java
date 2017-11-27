@@ -6,6 +6,8 @@ package com.example.testbackview;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.testbackview.utils.GeometricUtil;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;

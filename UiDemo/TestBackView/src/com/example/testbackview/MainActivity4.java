@@ -1,5 +1,7 @@
 package com.example.testbackview;
 
+import com.example.testbackview.widget.EnvelopeView;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;

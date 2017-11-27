@@ -15,7 +15,7 @@
         android:background="@drawable/car"
         android:layout_gravity="center_horizontal"/>
 
-        <com.example.testbackview.EnvelopeView
+        <com.example.testbackview.widget.EnvelopeView
             android:id="@+id/envelope_left_mid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
             app_custom:sweepAngle="40"
             />
 
-       <com.example.testbackview.EnvelopeView
+       <com.example.testbackview.widget.EnvelopeView
             android:id="@+id/envelope_left_corner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             app_custom:sweepAngle="40"
              />
 
-        <com.example.testbackview.EnvelopeView
+        <com.example.testbackview.widget.EnvelopeView
             android:id="@+id/envelope_right_mid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
             app_custom:sweepAngle="40"
              />
 
-       <com.example.testbackview.EnvelopeView
+       <com.example.testbackview.widget.EnvelopeView
             android:id="@+id/envelope_right_corner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -1,6 +1,9 @@
-package com.example.testbackview;
+package com.example.testbackview.activity;
 
-import com.example.testbackview.widget.BackView;
+import com.example.testbackview.R;
+import com.example.testbackview.RadarView;
+import com.example.testbackview.R.id;
+import com.example.testbackview.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,9 +11,9 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-public class MainActivity2 extends Activity {
+public class BackActivity extends Activity {
 
-	private BackView mBackCarView;
+	private RadarView mBackCarView;
 	private SeekBar mSeekBar1;
 	private SeekBar mSeekBar2;
 	private SeekBar mSeekBar3;
@@ -25,8 +28,8 @@ public class MainActivity2 extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_back);
-		mBackCarView = (BackView) findViewById(R.id.back);
+		setContentView(R.layout.activity_radar);
+		mBackCarView = (RadarView) findViewById(R.id.radar);
 		mSeekBar1 = (SeekBar) findViewById(R.id.seekBar1);
 		mSeekBar1.setOnSeekBarChangeListener(mOnSeekBarChangeListener);
 		mSeekBar2 = (SeekBar) findViewById(R.id.seekBar2);
@@ -43,6 +46,7 @@ public class MainActivity2 extends Activity {
 		mSeekBar7.setOnSeekBarChangeListener(mOnSeekBarChangeListener);
 		mSeekBar8 = (SeekBar) findViewById(R.id.seekBar8);
 		mSeekBar8.setOnSeekBarChangeListener(mOnSeekBarChangeListener);
+	
 	}
 	
 	public void doClick(View view){
@@ -70,21 +74,28 @@ public class MainActivity2 extends Activity {
 				boolean fromUser) {
 			switch (seekBar.getId()) {
 			case R.id.seekBar1:
-				mBackCarView.changeDegreed(progress - 50);
+				mBackCarView.changePoints(0, progress - 50); 
 				break;
 			case R.id.seekBar2:
+				mBackCarView.changePoints(1, progress - 50); 
 				break;
 			case R.id.seekBar3:
+				mBackCarView.changePoints(2, progress - 50); 
 				break;
 			case R.id.seekBar4:
+				mBackCarView.changePoints(3, progress - 50); 
 				break;
 			case R.id.seekBar5:
+				mBackCarView.changePoints(4, progress - 50); 
 				break;
 			case R.id.seekBar6:
+				mBackCarView.changePoints(5, progress - 50); 
 				break;
 			case R.id.seekBar7:
+				mBackCarView.changePoints(6, progress - 50); 
 				break;
 			case R.id.seekBar8:
+				mBackCarView.changePoints(7, progress - 50); 
 				break;
 				
 			default:
