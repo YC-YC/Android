@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="img_customer_clock_hour" type="id">false</item>
+    <item name="img_customer_clock_minute" type="id">false</item>
+    <item name="img_customer_clock_second" type="id">false</item>
+</resources>

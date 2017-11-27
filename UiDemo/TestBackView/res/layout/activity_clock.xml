@@ -2,7 +2,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="horizontal" >
+    
+    <com.example.testbackview.widget.ClockView
+        android:id="@+id/clockview"
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/clock_analog_dial_mipmap" >
+        
+        <ImageView
+            android:id="@id/img_customer_clock_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/clock_analog_hour_mipmap" />
 
+        <ImageView
+            android:id="@id/img_customer_clock_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/clock_analog_minute_mipmap" />
+
+        <ImageView
+            android:id="@id/img_customer_clock_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/clock_analog_second_mipmap" />
+        </com.example.testbackview.widget.ClockView>
+
+   <!--  <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/clock_analog_dial_mipmap" >
+
+        <ImageView
+            android:id="@id/img_customer_clock_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/clock_analog_hour_mipmap" />
+
+        <ImageView
+            android:id="@id/img_customer_clock_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/clock_analog_minute_mipmap" />
+
+        <ImageView
+            android:id="@id/img_customer_clock_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/clock_analog_second_mipmap" />
+    </FrameLayout> -->
+
+    <Button
+        android:id="@+id/bt_test_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时钟测试" />
 
 </LinearLayout>
