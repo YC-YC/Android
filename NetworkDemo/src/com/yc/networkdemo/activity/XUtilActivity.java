@@ -7,17 +7,12 @@ import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 
-import com.yc.networkdemo.R;
-import com.yc.networkdemo.R.id;
-import com.yc.networkdemo.R.layout;
-import com.yc.networkdemo.R.menu;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+
+import com.yc.networkdemo.R;
 
 /**
  * xutil包函有View、http、image、db四大功能模块

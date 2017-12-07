@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="ext_libs/android-async-http-1.4.4.jar"/>
 	<classpathentry exported="true" kind="lib" path="ext_libs/xutils 3.0.jar" sourcepath="ext_libs/xutils-3.5.0-sources.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>

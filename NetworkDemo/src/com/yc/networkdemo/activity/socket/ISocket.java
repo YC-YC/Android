@@ -5,14 +5,16 @@ package com.yc.networkdemo.activity.socket;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.nio.ByteBuffer;
+import java.util.Arrays;
 
 import android.os.SystemClock;
 import android.util.Log;
+
 
 /**
  * @author YC2
@@ -24,8 +26,9 @@ public abstract class ISocket {
 	private final String TAG = getClass().getSimpleName();
 	
 	private Socket mSocket;
-	private BufferedReader mReader;
+//	private BufferedReader mReader;
 	private OutputStream mWriter;
+	private InputStream mReader;
 	
 	
 	/**
@@ -39,10 +42,11 @@ public abstract class ISocket {
 		try {
 			mSocket.connect(new InetSocketAddress(host, port));
 //			mSocket.sendUrgentData(value)
-			mReader = new BufferedReader(new InputStreamReader(mSocket.getInputStream()));
+			mReader = mSocket.getInputStream();
+//			mReader = new BufferedReader(new InputStreamReader(mSocket.getInputStream()));
 			mWriter = mSocket.getOutputStream();
 		} catch (IOException e) {
-			e.printStackTrace();
+			Log(e.toString());
 			closeSocket();
 		}
 		
@@ -52,12 +56,13 @@ public abstract class ISocket {
 	 * 关闭Socket
 	 */
 	public synchronized void closeSocket() {
+		Log("closeSocket");
 		if (mWriter != null){
 			try {
 				mWriter.close();
 				mWriter = null;
 			} catch (IOException e1) {
-				e1.printStackTrace();
+				Log(e1.toString());
 			}
 		}
 		if (mReader != null){
@@ -65,7 +70,7 @@ public abstract class ISocket {
 				mReader.close();
 				mReader = null;
 			} catch (IOException e1) {
-				e1.printStackTrace();
+				Log(e1.toString());
 			}
 		}
 		if (mSocket != null){
@@ -73,7 +78,7 @@ public abstract class ISocket {
 				mSocket.close();
 				mSocket = null;
 			} catch (IOException e1) {
-				e1.printStackTrace();
+				Log(e1.toString());
 			}
 		}
 	}
@@ -86,15 +91,18 @@ public abstract class ISocket {
 			
 			@Override
 			public void run() {
-				char[] buffer = new char[1024];
+				Log("start read thread");
+				byte[] buffer = new byte[128];
 				while(mReader != null){
 					try {
 						int len = 0;
 						while((len = mReader.read(buffer)) > 0){
+							DebugLog("socket read len = " + len);
+							DebugLog("read Data = " + ByteUtil.toString(buffer, len));
 							onReadData(buffer, len);
 						}
 					} catch (IOException e) {
-						e.printStackTrace();
+						Log(e.toString());
 						closeSocket();
 					}
 					SystemClock.sleep(10);
@@ -111,20 +119,25 @@ public abstract class ISocket {
 	public synchronized boolean writeData(byte[] buffer, int offset, int count) {
 		if (isSocketOpen() && mWriter != null){
 			try {
+				DebugLog("writeData = " + ByteUtil.toString(buffer));
 				mWriter.write(buffer, offset, count);
 				mWriter.flush();
 				return true;
 			} catch (IOException e) {
-				e.printStackTrace();
+				Log(e.toString());
 				closeSocket();
 			}
 		}
 		return false;
 	}
 	
-	abstract protected void onReadData(char[] data, int len);
+	abstract protected void onReadData(byte[] data, int len);
 	
 	protected void Log(String msg){
+		Log.i(TAG, msg);
+	}
+	
+	protected void DebugLog(String msg){
 		Log.i(TAG, msg);
 	}
 

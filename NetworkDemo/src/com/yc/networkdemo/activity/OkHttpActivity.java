@@ -1,15 +1,10 @@
 package com.yc.networkdemo.activity;
 
-import com.yc.networkdemo.R;
-import com.yc.networkdemo.R.id;
-import com.yc.networkdemo.R.layout;
-import com.yc.networkdemo.R.menu;
-
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+
+import com.yc.networkdemo.R;
 
 public class OkHttpActivity extends Activity {
 

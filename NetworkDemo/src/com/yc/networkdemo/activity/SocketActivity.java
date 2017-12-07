@@ -8,20 +8,13 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
-
-import com.yc.networkdemo.R;
-import com.yc.networkdemo.R.id;
-import com.yc.networkdemo.R.layout;
-import com.yc.networkdemo.R.menu;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import com.yc.networkdemo.R;
 
 public class SocketActivity extends Activity {
 

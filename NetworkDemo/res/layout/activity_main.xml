@@ -1,19 +1,21 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.yc.networkdemo.activity.MainActivity" >
+  android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bt_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="退出" />
 
        <Button
            android:id="@+id/bt_xutil"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_alignLeft="@+id/bt_OkHttp"
-           android:layout_centerVertical="true"
            android:onClick="doClick"
            android:text="XUtil" />
 
@@ -21,8 +23,6 @@
            android:id="@+id/bt_OkHttp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_above="@+id/bt_xutil"
-           android:layout_alignLeft="@+id/bt_volley"
            android:onClick="doClick"
            android:text="OkHttp" />
 
@@ -30,8 +30,6 @@
            android:id="@+id/bt_volley"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_above="@+id/bt_OkHttp"
-           android:layout_centerHorizontal="true"
            android:onClick="doClick"
            android:text="Volley" />
 
@@ -39,27 +37,20 @@
            android:id="@+id/bt_asynchttpclient"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_above="@+id/bt_volley"
-           android:layout_alignLeft="@+id/bt_volley"
            android:onClick="doClick"
            android:text="AsyncHttpClient" />
-
-       <Button
-           android:id="@+id/bt_exit"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_above="@+id/bt_asynchttpclient"
-           android:layout_alignLeft="@+id/bt_asynchttpclient"
-           android:onClick="doClick"
-           android:text="退出" />
 
        <Button
            android:id="@+id/bt_socket"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_alignLeft="@+id/bt_xutil"
-           android:layout_below="@+id/bt_xutil"
            android:onClick="doClick"
            android:text="Socket" />
+       <Button
+           android:id="@+id/bt_tbox"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:onClick="doClick"
+           android:text="TBoxSocket" />
 
-</RelativeLayout>
+</LinearLayout>

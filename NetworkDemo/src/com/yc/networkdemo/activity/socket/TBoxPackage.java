@@ -5,6 +5,7 @@ package com.yc.networkdemo.activity.socket;
 
 import java.util.Arrays;
 
+
 /**
  * @author YC2
  * @time 2017-11-23 下午4:18:18
@@ -12,9 +13,9 @@ import java.util.Arrays;
  */
 public class TBoxPackage {
 	
-	private static final int PACKAGE_MIN_LEN = 13;
+	private static final int PACKAGE_MIN_LEN = 14;
 
-	private int headerIdentifier = 0x8E5D;
+	private int headerIdentifier = 0x5D8E;
 	private int headerLength;
 	private int headerCount;
 	private boolean headerAskFlag;
@@ -43,7 +44,7 @@ public class TBoxPackage {
 	 */
 	public TBoxPackage(int headerCount, boolean headerAskFlag,
 			int headerMsgType, int bodyCmd, byte[] bodyData) {
-		this(0x8E5D, headerCount, headerAskFlag, headerMsgType, 0, 0, 0, 0, 0x60, 0x36, bodyCmd, bodyData);
+		this(0x5D8E, headerCount, headerAskFlag, headerMsgType, 0, 0, 0, 0, 0x60, 0x36, bodyCmd, bodyData);
 	}
 
 	/**
@@ -79,12 +80,12 @@ public class TBoxPackage {
 		this.bodyData = bodyData;
 		
 		this.bodyDataLen = (bodyData == null)? 0: bodyData.length;
-		this.headerLength = PACKAGE_MIN_LEN+bodyDataLen;
+		this.headerLength = PACKAGE_MIN_LEN+bodyDataLen-4;
 	}
 
 	TBoxPackage(byte[] data){
 		headerIdentifier = (byte2int(data[0])<<8) + byte2int(data[1]);
-		headerLength = (byte2int(data[2])<<8) + byte2int(data[3]);
+		headerLength = (byte2int(data[3])<<8) + byte2int(data[2]);
 		headerCount = byte2int(data[4]);
 		headerAskFlag = ((data[5]&0x01) > 0) ? true:false;
 		headerMsgType = (byte2int(data[5])>>1)&0x07;
@@ -95,15 +96,15 @@ public class TBoxPackage {
 		bodyErrorCode = (byte2int(data[7])>>4)&0x0F;
 		bodyTid = byte2int(data[8]);
 		bodySid = byte2int(data[9]);
-		bodyDataLen = byte2int(data[10]);
-		bodyCmd = byte2int(data[11]);
+		bodyDataLen = (byte2int(data[11])<<8) + byte2int(data[10]);
+		bodyCmd = byte2int(data[12]);
 		if (bodyDataLen > 0){
 			bodyData = new byte[bodyDataLen];
-			System.arraycopy(data, 12, bodyData, 0, bodyDataLen);
-			tail = byte2int(data[12+bodyDataLen]);
+			System.arraycopy(data, 13, bodyData, 0, bodyDataLen);
+			tail = byte2int(data[13+bodyDataLen]);
 		}
 		else{
-			tail = byte2int(data[12]);
+			tail = byte2int(data[13]);
 		}
 	}
 	
@@ -112,8 +113,8 @@ public class TBoxPackage {
 		byte[] data = new byte[totalLen];
 		data[0] = (byte) (headerIdentifier>>8);
 		data[1] = (byte) headerIdentifier;
-		data[2] = (byte) (headerLength>>8);
-		data[3] = (byte) headerLength;
+		data[2] = (byte) headerLength;
+		data[3] = (byte) (headerLength>>8);
 		data[4] = (byte) headerCount;
 		byte tmp = 0;
 		tmp |= headerAskFlag?0x01:0x00;
@@ -128,12 +129,13 @@ public class TBoxPackage {
 		data[7] = tmp;
 		data[8] = (byte) bodyTid;
 		data[9] = (byte) bodySid;
-		data[10] = (byte) bodyDataLen;
-		data[11] = (byte) bodyCmd;
+		data[10] = (byte) (bodyDataLen);
+		data[11] = (byte) (bodyDataLen>>8);
+		data[12] = (byte) bodyCmd;
 		if (bodyDataLen > 0){
-			System.arraycopy(bodyData, 0, data, 12, bodyDataLen);
+			System.arraycopy(bodyData, 0, data, 13, bodyDataLen);
 		}
-		data[totalLen -1] = getXor(data, 8, totalLen - 2);
+		data[totalLen -1] = getXor(data, 9, totalLen - 2);
 		return data;
 	}
 	
@@ -257,15 +259,15 @@ public class TBoxPackage {
 
 	@Override
 	public String toString() {
-		return "TBoxPackage [headerIdentifier=" + headerIdentifier
+		return "TBoxPackage [headerIdentifier=" + String.format("0x%04x", headerIdentifier)
 				+ ", headerLength=" + headerLength + ", headerCount="
 				+ headerCount + ", headerAskFlag=" + headerAskFlag
 				+ ", headerMsgType=" + headerMsgType + ", headerErrorCode="
 				+ headerErrorCode + ", bodyVersion=" + bodyVersion
 				+ ", bodyEncryption=" + bodyEncryption + ", bodyErrorCode="
-				+ bodyErrorCode + ", bodyTid=" + bodyTid + ", bodySid="
-				+ bodySid + ", bodyDataLen=" + bodyDataLen + ", bodyCmd="
-				+ bodyCmd + ", bodyData=" + Arrays.toString(bodyData)
+				+ bodyErrorCode + ", bodyTid=" + String.format("0x%02x", bodyTid) + ", bodySid="
+				+ String.format("0x%02x", bodySid) + ", bodyDataLen=" + bodyDataLen + ", bodyCmd="
+				+ String.format("0x%02x", bodyCmd) + ", bodyData=" + ByteUtil.toString(bodyData)
 				+ ", tail=" + tail + "]";
 	}
 	

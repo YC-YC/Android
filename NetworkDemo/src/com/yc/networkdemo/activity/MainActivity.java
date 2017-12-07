@@ -1,16 +1,11 @@
 package com.yc.networkdemo.activity;
 
-import com.yc.networkdemo.R;
-import com.yc.networkdemo.R.id;
-import com.yc.networkdemo.R.layout;
-import com.yc.networkdemo.R.menu;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+
+import com.yc.networkdemo.R;
 
 public class MainActivity extends Activity {
 
@@ -40,7 +35,9 @@ public class MainActivity extends Activity {
 		case R.id.bt_exit:
 			finish();
 			break;
-
+		case R.id.bt_tbox:
+			startActivity(new Intent(this, TBoxActivity.class));
+			break;
 		default:
 			break;
 		}

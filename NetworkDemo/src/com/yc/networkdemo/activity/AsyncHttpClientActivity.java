@@ -1,13 +1,5 @@
 package com.yc.networkdemo.activity;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import org.apache.http.Header;
 import org.xutils.x;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -17,9 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 import com.yc.networkdemo.R;
 
 @ContentView(R.layout.activity_async)
@@ -27,7 +16,7 @@ public class AsyncHttpClientActivity extends Activity {
 
 	protected static final String TAG = "TestAsync";
 	/** 官网建议只有一个对象 */
-	private static AsyncHttpClient client = new AsyncHttpClient();
+//	private static AsyncHttpClient client = new AsyncHttpClient();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +48,7 @@ public class AsyncHttpClientActivity extends Activity {
 	 * 
 	 */
 	private void testAsyncPost() {
-		RequestParams params = new RequestParams();
+		/*RequestParams params = new RequestParams();
 		params.put("username", "yc");
 		params.put("psw", "123");
 		params.put("upload_file", "/mnt/sdcard/123.png");
@@ -112,7 +101,7 @@ public class AsyncHttpClientActivity extends Activity {
 				super.onSuccess(arg0, arg1, arg2);
 				Log.i(TAG, "post onSuccess");
 			}
-		});
+		});*/
 	}
 
 	/**
@@ -120,7 +109,7 @@ public class AsyncHttpClientActivity extends Activity {
 	 */
 	private void testAsyncGet() {
 		Log.i(TAG, "testAsyncGet");
-		client.get("https://www.baidu.com", new AsyncHttpResponseHandler(){
+		/*client.get("https://www.baidu.com", new AsyncHttpResponseHandler(){
 
 			@Override
 			public void onFailure(int arg0, Header[] arg1, byte[] arg2,
@@ -152,6 +141,6 @@ public class AsyncHttpClientActivity extends Activity {
 				super.onSuccess(arg0, arg1, arg2);
 				Log.i(TAG, "onSuccess");
 			}
-		});
+		});*/
 	}
 }

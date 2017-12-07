@@ -26,10 +26,14 @@ public class SocketHelper extends ISocket {
 	}
 	
 	@Override
-	protected void onReadData(char[] data, int len) {
-		byte[] bytes = ByteUtil.getBytes(data, len);
-		System.arraycopy(bytes, 0, mRecData, mRecDataLen, len);
+	protected void onReadData(byte[] data, int len) {
+		if (mRecDataLen + len > REC_BUFFER_LEN){
+			mRecDataLen = 0;
+			Log("clear old data");
+		}
+		System.arraycopy(data, 0, mRecData, mRecDataLen, len);
 		mRecDataLen += len;
+		Log("onReadData totalLen = " + mRecDataLen + ",data=" + ByteUtil.toString(mRecData, mRecDataLen));
 		processRecData();
 	}
 
@@ -46,16 +50,22 @@ public class SocketHelper extends ISocket {
 	 */
 	private void processRecData() {
 		final int startIndex = getStartIndex();
+		Log("startIndex = " + startIndex);
 		if (startIndex >= 0){
 			if (mRecDataLen > startIndex + PACKAGE_MIN_LEN){
-				int pkgLen = (mRecData[startIndex+2]<<8)+mRecData[startIndex+3];
+				int pkgLen = (mRecData[startIndex+3]<<8)+mRecData[startIndex+2];
 				int pkgSize = pkgLen + 4;
+//				Log("pkgSize = " + pkgSize);
 				if (mRecDataLen >= startIndex + pkgSize){
 					byte[] pkg = new byte[pkgSize];
 					System.arraycopy(mRecData, startIndex, pkg, 0, pkgSize);
+//					Log("get one package");
 					notifySocketPackage(pkg);
 					mRecDataLen -= startIndex + pkgSize;
 					System.arraycopy(mRecData, startIndex + pkgSize, mRecData, 0, mRecDataLen);
+				}
+				if (getStartIndex() >= 0){
+					processRecData();
 				}
 			}
 		}
@@ -66,18 +76,18 @@ public class SocketHelper extends ISocket {
 	}
 
 	/**
-	 * 查找0x8E， 0x5D开头的位置
+	 * 查找0x5D， 0x8E开头的位置
 	 * @return
 	 */
 	private int getStartIndex() {
-		//找出0x8E， 0x5D的位置
+		//找出0x5D， 0x8E的位置
 		for (int i = 0; i < mRecDataLen-1; i++){
-			if (ByteUtil.byte2int(mRecData[i]) == 0x8E && mRecData[i+1] == 0x5D){
+			if (ByteUtil.byte2int(mRecData[i]) == 0x5D && ByteUtil.byte2int(mRecData[i+1]) == 0x8E){
 				return i;
 			}
 		}
-		//没有0x8E， 0x5D，找出最后一个字节为0x8E的位置
-		if (mRecDataLen > 0 && ByteUtil.byte2int(mRecData[mRecDataLen-1]) == 0x8E){
+		//没有0x5D， 0x8E，找出最后一个字节为0x5D的位置
+		if (mRecDataLen > 0 && ByteUtil.byte2int(mRecData[mRecDataLen-1]) == 0x5D){
 			return mRecDataLen-1;
 		}
 		return -1;
@@ -86,6 +96,7 @@ public class SocketHelper extends ISocket {
 	private void notifySocketPackage(byte[] data){
 		if (mOnSocketPackageListener != null){
 			TBoxPackage pkg = new TBoxPackage(data);
+			Log("get tbox package = " + pkg.toString());
 			mOnSocketPackageListener.onPackage(pkg);
 		}
 	}

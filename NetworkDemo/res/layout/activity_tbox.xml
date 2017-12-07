@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bt_exit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="退出" />
+
+            <Button
+                android:id="@+id/bt_check_wan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="checkWan" />
+
+            <Button
+                android:id="@+id/bt_check_mobiledata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="checkMobileData" />
+
+            <Button
+                android:id="@+id/bt_set_mobiledata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="setMobileData" />
+            <Button
+                android:id="@+id/bt_check_wifistate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="checkWifiState" />
+
+            <Button
+                android:id="@+id/bt_set_wifistate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="setWifiState" />
+
+            <Button
+                android:id="@+id/bt_check_wifissid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="checkWifiSSID" />
+
+            <Button
+                android:id="@+id/bt_set_wifissid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="setWifiSSID" />
+
+            <Button
+                android:id="@+id/bt_check_wifipsw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="checkWifiPsw" />
+
+            <Button
+                android:id="@+id/bt_set_wifipsw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="setWifiPsw" />
+
+            <Button
+                android:id="@+id/bt_check_connectioncount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="checkConnectionCount" />
+
+            <Button
+                android:id="@+id/bt_tbox_selcheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TBoxSelfCheck" />
+
+            <Button
+                android:id="@+id/bt_check_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="checkID" />
+
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
