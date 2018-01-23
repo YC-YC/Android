@@ -61,41 +61,41 @@ int ReadPcm::openReadPcm(UINT card, UINT device, UINT channels, UINT rate,
 	}
 	config.channels = channels;
 	config.rate = rate;
-	config.period_size = 512;
-//	config.period_size = 256;
-	config.period_count = 2;
+//	config.period_size = 512;
+	config.period_size = 128;
+	config.period_count = 8;
 	config.start_threshold = 0;
 	config.stop_threshold = 0;
 	config.silence_threshold = 0;
-	LOGI("open pcm---");
 	mPcm = pcm_open(card, device, PCM_IN, &config);
-	LOGI("open pcm+++");
 	if (!mPcm || !pcm_is_ready(mPcm)) {
 		LOGI("Unable to open PCM device (%s)\n", pcm_get_error(mPcm));
 		return 0;
 	}
-	LOGI("open pcm period_size = %d, period_count = %d\n", config.period_size, config.period_count);
+//	LOGI("open pcm period_size = %d, period_count = %d\n", config.period_size, config.period_count);
 	DWORD size = pcm_frames_to_bytes(mPcm, pcm_get_buffer_size(mPcm));
-	pReadBuf = (char*) malloc(size);
+	mReadBufLen = size;
+	pReadBuf = (char*) malloc(mReadBufLen);
 	if (!pReadBuf) {
 		LOGI("Unable to allocate %d bytes\n", size);
 		free(pReadBuf);
 		pcm_close(mPcm);
+		mPcm = NULL;
 		return 0;
 	}
 	return size;
 }
 
 int ReadPcm::readPcmData() {
+	if (mPcm != NULL){
+//		DWORD size = pcm_frames_to_bytes(mPcm, pcm_get_buffer_size(mPcm));
+		if (!pcm_read(mPcm, pReadBuf, mReadBufLen)){
+			writeDataToJava(pReadBuf, mReadBufLen);
+			return mReadBufLen;
+		}
+	}
 
-	DWORD size = pcm_frames_to_bytes(mPcm, pcm_get_buffer_size(mPcm));
-	if (!pcm_read(mPcm, pReadBuf, size)){
-		writeDataToJava(pReadBuf, size);
-		return size;
-	}
-	else{
-		return 0;
-	}
+	return 0;
 }
 
 void ReadPcm::stopReadPcm(){

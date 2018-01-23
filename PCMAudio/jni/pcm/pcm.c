@@ -652,7 +652,7 @@ struct pcm *pcm_open(unsigned int card, unsigned int device,
     char fn[256];
     int rc;
     unsigned int rrate,rchannels,rbits;
-    LOGI("open pcm 111");
+//    LOGI("open pcm 111");
     pcm = calloc(1, sizeof(struct pcm));
     if (!pcm || !config){
     	return &bad_pcm; /* TODO: could support default config here */

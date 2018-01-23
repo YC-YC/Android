@@ -12,7 +12,7 @@
 
 class ReadPcm{
 public:
-	ReadPcm():mPcm(NULL),pReadBuf(NULL){}
+	ReadPcm():mPcm(NULL),pReadBuf(NULL),mReadBufLen(0){}
 	int initReadPcm(JavaVM *vm, JNIEnv *env, CPCHAR pName);
 	void deInitReadPcm(JNIEnv *env);
 	int openReadPcm(UINT card, UINT device, UINT channels, UINT rate, UINT bits);
@@ -27,6 +27,7 @@ private:
 	jmethodID methodwriteDataToJava;
 	struct pcm *mPcm;
 	char* pReadBuf;
+	int mReadBufLen;
 };
 
 

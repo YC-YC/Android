@@ -11,7 +11,6 @@
 extern "C" {
 #endif
 
-
 int WritePcm::openWritePcm(UINT card, UINT device, UINT channels, UINT rate,
 		UINT bits) {
 	struct pcm_config config;
@@ -21,8 +20,8 @@ int WritePcm::openWritePcm(UINT card, UINT device, UINT channels, UINT rate,
 
 	config.channels = channels;
 	config.rate = rate;
-	config.period_size = 512;
-	config.period_count = 2;
+	config.period_size = 128;
+	config.period_count = 8;
 	if (bits == 32)
 		config.format = PCM_FORMAT_S32_LE;
 	else if (bits == 16)
