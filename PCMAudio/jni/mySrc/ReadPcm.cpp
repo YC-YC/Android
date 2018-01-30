@@ -61,9 +61,8 @@ int ReadPcm::openReadPcm(UINT card, UINT device, UINT channels, UINT rate,
 	}
 	config.channels = channels;
 	config.rate = rate;
-//	config.period_size = 512;
-	config.period_size = 128;
-	config.period_count = 8;
+	config.period_size = 512;
+	config.period_count = 4;
 	config.start_threshold = 0;
 	config.stop_threshold = 0;
 	config.silence_threshold = 0;
